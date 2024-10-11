@@ -12,12 +12,12 @@ export default (url = baseUrl) => {
   })
 
   instance.interceptors.response.use(undefined, err => {
-    // if(err.response && err.response?.data?.error?.status !== 404) {
-    //   setPageError(
-    //     err.response?.data?.error?.message,
-    //     err.response?.data?.error?.status
-    //   )
-    // }
+     if(err.response && err.response?.data?.error?.status !== 404) {
+       setPageError(
+        err.response?.data?.error?.message,
+         err.response?.data?.error?.status
+       )
+     }
     return Promise.reject(err);
 
   })
