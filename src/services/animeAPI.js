@@ -2,13 +2,13 @@ import API from './API.js';
 
 export default {
   getHome() {
-    return API().get(`/api/v1/home`)
+    return API().get(`/api/v2/hianime/home`)
   },
   getAnimeInfo(animeId) {
-    return API().get(`/api/v1/info?id=${animeId}`)
+    return API().get(`/api/v2/hianime/anime/{animeId}`)
   },
   getAnimeCategory(animeCategory, page) {
-    return API().get(`/api/v1/${animeCategory}?page=${page}`, {
+    return API().get(`/api/v2/hianime/category/{name}?page={page}`, {
       withCredentials: true
     })
   },
@@ -16,10 +16,10 @@ export default {
     return API().get(`/api/v1/explore/${animeCategory}`)
   },
   getGenreAnime(genreName) {
-    return API().get(`/api/v1/genre?name=${genreName}`)
+    return API().get(`/api/v2/hianime/genre/{name}?page={page}`)
   },
   getSearchResults(query, page) {
-    return API().get(`/api/v1/search?q=${query}&page=${page}`)
+    return API().get(`/api/v2/hianime/search?q={query}&page={page}`)
   },
   getQuickSearchResults(query) {
     return API().get(`/api/v1/quick-search?q=${query}`)
