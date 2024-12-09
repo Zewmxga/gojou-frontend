@@ -1,8 +1,8 @@
 import axios from 'axios';
 import { setPageError } from '@/stores/error';
 
-const baseUrl = process.env.VUE_APP_API_BASE_URL;
-// const baseUrl = 'http://192.168.0.106:5000'
+
+ const baseUrl = 'https://animeapibdhd.vercel.app'
 
 
 export default (url = baseUrl) => {
